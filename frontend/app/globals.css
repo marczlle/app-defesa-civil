@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+:root {
+  /* Cores Institucionais (Bandeira de Pernambuco) */
+  --pe-blue: #003882;
+  --pe-blue-dark: #002456;
+  --pe-red: #E1001A;
+  --pe-yellow: #FFD100;
+  --pe-green: #009B3A;
+
+  /* Cores Base do Sistema */
+  --background: #f8fafc; /* slate-50 */
+  --foreground: #0f172a; /* slate-900 */
+  
+  /* Tipografia e Feedback */
+  --muted: #64748b; /* slate-500 */
+  --success: #065f46;
+  --danger: #b91c1c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-pe-blue: var(--pe-blue);
+  --color-pe-blue-dark: var(--pe-blue-dark);
+  --color-pe-red: var(--pe-red);
+  --color-pe-yellow: var(--pe-yellow);
+  --color-pe-green: var(--pe-green);
+  
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit; 
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estilo para links que estão "soltos" no texto (opcional) */
+.link-standard {
+  color: var(--pe-blue);
+}
+
+.link-standard:hover {
+  color: var(--pe-blue-dark);
+  text-decoration: underline;
+}
+
+/* Cursor em elementos interativos */
+button:not(:disabled),
+a[href],
+[role="button"]:not([aria-disabled="true"]),
+label[for],
+select,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+summary {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* Sidebar: cores fixas, independente do tema do sistema */
+.app-sidebar {
+  color-scheme: light only;
+  background: linear-gradient(180deg, #003882 0%, #002456 100%) !important;
+  color: #ffffff !important;
+  border-color: #002456 !important;
+}
+
+.app-sidebar .sidebar-brand-title {
+  color: #ffffff !important;
+}
+
+.app-sidebar .sidebar-brand-subtitle {
+  color: #bfdbfe !important;
+}
+
+.app-sidebar .sidebar-section-label {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.app-sidebar .sidebar-nav-link {
+  color: rgba(255, 255, 255, 0.88) !important;
+  text-decoration: none !important;
+}
+
+.app-sidebar .sidebar-nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.app-sidebar .sidebar-nav-link.is-active {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-sidebar .sidebar-logout {
+  color: #bfdbfe !important;
+}
+
+.app-sidebar .sidebar-logout:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.app-sidebar .sidebar-close {
+  color: #ffffff !important;
+}
+
+@media (forced-colors: active) {
+  .app-sidebar {
+    forced-color-adjust: none;
+    background: #003882 !important;
+    color: #ffffff !important;
+  }
+
+  .app-sidebar .sidebar-nav-link,
+  .app-sidebar .sidebar-logout,
+  .app-sidebar .sidebar-brand-title,
+  .app-sidebar .sidebar-brand-subtitle,
+  .app-sidebar .sidebar-section-label,
+  .app-sidebar .sidebar-close {
+    color: #ffffff !important;
+  }
+}

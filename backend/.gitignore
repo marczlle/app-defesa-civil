@@ -1,0 +1,50 @@
+# Node modules
+/node_modules/
+
+# Build output
+/dist/
+/build/
+
+# Environment variables
+.env
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Prisma
+# prisma/.env com variáveis locais — descomente se usar arquivo separado
+# prisma/migrations/ — migrations estão sendo versionadas intencionalmente
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional: package lock (depende do gerenciamento que você quer)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Test coverage
+coverage/
+
+# IDE configs (opcional)
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Docker
+docker-compose.override.yml
+*.env.docker
