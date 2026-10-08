@@ -130,11 +130,25 @@ export default function ComunicadosPage() {
 
 								<div>
 									<h2 className="text-lg font-bold text-[#0f172a]">
-										{comunicado.titulo}
+										<Link
+											href={`/comunicados/${comunicado.id}`}
+											className="transition-colors hover:text-[#003882]"
+										>
+											{comunicado.titulo}
+										</Link>
 									</h2>
-									<p className="mt-1 text-sm leading-relaxed text-[#475569] whitespace-pre-wrap">
+									<p className="mt-1 text-sm leading-relaxed text-[#475569] whitespace-pre-wrap line-clamp-3">
 										{comunicado.conteudo}
 									</p>
+									<Link
+										href={`/comunicados/${comunicado.id}`}
+										className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-[#003882] transition-colors hover:text-[#002456]"
+									>
+										Ler comunicado
+										<svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+										</svg>
+									</Link>
 								</div>
 							</div>
 
